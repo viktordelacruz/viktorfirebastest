@@ -7,7 +7,7 @@ angular.module('starter', ['ionic', 'firebase'])
 
 .factory('Items', ['$firebaseArray', function($firebaseArray) {
   //var itemsRef = new Firebase('https://ionic-fb-demo.firebaseio.com/items');
-  var itemsRef = firebase.database().ref();
+  var itemsRef = firebase.database().ref('food');
   var syncObject =  $firebaseArray(itemsRef);
   return syncObject;
 }])
@@ -27,9 +27,9 @@ angular.module('starter', ['ionic', 'firebase'])
 
 /*  $scope.purchaseItem = function(item) {
     //var itemRef = new Firebase('https://ionic-fb-demo.firebaseio.com/items/' + item.$id);
-    var itemRef = firebase.database().ref();
-    var obj = $firebaseOjbect(itemRef);
-    obj.$id.child('status').set('purchased');
+    var itemRef = firebase.database().ref('food/' + item.$id);
+    //var obj = $firebaseOjbect(itemRef);
+    itemRef.child('status').set('purchased');
     $ionicListDelegate.closeOptionButtons();
   };*/
 });
