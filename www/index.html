@@ -44,7 +44,7 @@
   
   <body ng-app="starter" ng-controller="ListCtrl">
     <ion-header-bar class="top">
-      <h1 class="title">Items</h1>
+      <h1 class="title">To Do List</h1>
       <button class="button button-icon ion-plus" ng-click="addItem()"></button>
     </ion-header-bar>
 
@@ -52,9 +52,9 @@
       <ion-list>
         <ion-item ng-repeat="item in items" ng-class="{purchased: item.status == 'purchased'}">
           {{item.name}}
-<!--           <ion-option-button class="button-royal" ng-click="purchaseItem(item)">
+          <ion-option-button class="button-royal" ng-click="purchaseItem(item)">
             <i class="icon ion-checkmark"></i>
-          </ion-option-button> -->
+          </ion-option-button>
         </ion-item>
       </ion-list>
     </ion-content>
